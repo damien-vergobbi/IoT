@@ -1,0 +1,19 @@
+Vagrant.configure("2") do |config|
+  config.vm.define "dvergobbS" do |control|
+    control.vm.box = "debian/buster64"  # Utilisez la boîte Debian Buster 64-bit.
+    control.vm.network "private_network", type: "dhcp"
+    control.vm.provider "virtualbox" do |vb|
+      vb.memory = "512"  # Vous pouvez ajuster la mémoire selon vos besoins.
+      vb.cpus = 1
+    end
+  end
+
+  config.vm.define "dvergobbSW" do |control|
+    control.vm.box = "debian/buster64"
+    control.vm.network "private_network", type: "dhcp"
+    control.vm.provider "virtualbox" do |vb|
+      vb.memory = "512"
+      vb.cpus = 1
+    end
+  end
+end
